@@ -1,0 +1,4 @@
+[submodule "iotagent-node-lib"]
+	path = iotagent-node-lib
+	url = https://github.com/jason-fox/iotagent-node-lib.git
+	branch = feature/webservice

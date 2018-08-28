@@ -1,0 +1,296 @@
+{
+	"info": {
+		"_postman_id": "26caec4c-1cb5-43aa-aaa0-101ae0154d23",
+		"name": "Smart-Maas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Tyrol Bus Stops",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://opensasa.info/SASAplandata/?type=REC_ORT",
+					"protocol": "http",
+					"host": [
+						"opensasa",
+						"info"
+					],
+					"path": [
+						"SASAplandata",
+						""
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "REC_ORT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tyrol Lines",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://stationboard.opensasa.info/?ORT_NR=5324&LINES=5&type=json",
+					"protocol": "http",
+					"host": [
+						"stationboard",
+						"opensasa",
+						"info"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "ORT_NR",
+							"value": "5324"
+						},
+						{
+							"key": "LINES",
+							"value": "5"
+						},
+						{
+							"key": "type",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tyrol Departure Board",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://stationboard.opensasa.info/?ORT_NR=5321&type=json",
+					"protocol": "http",
+					"host": [
+						"stationboard",
+						"opensasa",
+						"info"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "ORT_NR",
+							"value": "5321"
+						},
+						{
+							"key": "type",
+							"value": "json"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deutsche Bahn",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer "
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "https://api.deutschebahn.com/stada/v2/stations?limit=10",
+					"protocol": "https",
+					"host": [
+						"api",
+						"deutschebahn",
+						"com"
+					],
+					"path": [
+						"stada",
+						"v2",
+						"stations"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tyrol Entities",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "fiware-servicepath",
+						"value": "/"
+					},
+					{
+						"key": "fiware-service",
+						"value": "smart_maas"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:1026/v2/entities",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1026",
+					"path": [
+						"v2",
+						"entities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Provisioned",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "fiware-servicepath",
+						"value": "/"
+					},
+					{
+						"key": "fiware-service",
+						"value": "smart_maas"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4041/web/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4041",
+					"path": [
+						"web",
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SASAx2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "fiware-servicepath",
+						"value": "/"
+					},
+					{
+						"key": "fiware-service",
+						"value": "smart_maas"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4041/web/services/SASA2x",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4041",
+					"path": [
+						"web",
+						"services",
+						"SASA2x"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SASAx2 Remove",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "fiware-servicepath",
+						"value": "/"
+					},
+					{
+						"key": "fiware-service",
+						"value": "smart_maas"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4041/web/services/SASA2x",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4041",
+					"path": [
+						"web",
+						"services",
+						"SASA2x"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SASAx2 Provision",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "fiware-service",
+						"value": "smart_maas"
+					},
+					{
+						"key": "fiware-servicepath",
+						"value": "/"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"services\": [\n \t{\n\t \"web_service_id\" : \"SASA2x\",\n\t \"endpoint\":   \"http://opensasa.info/SASAplandata/?type=REC_ORT\",\n\t \"entity_type\": \"gtfs:Stop\",\n\t \"entity_id_prefix\": \"urn:ngsi-ld:gtfs:Stop:SASA_\",\n\t \"entity_id_expression\":\"${@ORT_NR}\",\n\t \"timezone\":    \"Europe/Berlin\",\n\t \"attributes\": [\n\t \t{ \"object_id\": \"ORT_NR\", \"name\":\"code\", \"type\":\"Text\"},\n\t\t{ \"object_id\": \"ORT_NAME\", \"name\":\"name\", \"type\":\"Text\"},\n\t    {\n\t        \"name\":\"location\",\n\t        \"type\":\"geo:json\",\n\t        \"value\": {\n\t        \t\"type\" : \"Point\",\n\t        \t\"coordinates\": \"${@ORT_POS_LAENGE}, ${@ORT_POS_BREITE}\"\n\t        }\n\t    }\n\t  ],\n\t  \"static_attributes\": [\n\t    {\"name\":\"operatedBy\", \"type\": \"Relationship\",\"value\": \"urn:ngsi-ld:gtfs:Agency:SASA\"}\n\t  ]\n\t}\n\t]\n}\n\n"
+				},
+				"url": {
+					"raw": "http://localhost:4041/web/services",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4041",
+					"path": [
+						"web",
+						"services"
+					]
+				},
+				"description": "It is common good practice to use URNs following the NGSI-LD [draft recommendation](https://docbox.etsi.org/ISG/CIM/Open/ISG_CIM_NGSI-LD_API_Draft_for_public_review.pdf) when creating entities. Furthermore it is easier to understand\nmeaningful names when defining data attributes. These mappings can be defined by provisioning a device individually.\n\nThree types of meaasurement attributes can be provisioned:\n\n* `attributes` are active readings from the device\n* `lazy` attributes are only sent on request -  The IoT Agent will inform the device to return the measurement\n* `static_attributes` are as the name suggests static data about the device (such as relationships) passed on \n  to the context broker.\n\n>**Note**: in the case where individual `id`s are not required, or aggregated data is sufficient \n> the `attributes` can be defined within the provisioning service rather than individually.\n\nIn the request we are assiociating the device `motion001` with the URN `urn:ngsd-ld:Motion:001`\nand mapping the device reading `c` with the context attribute `count` (which is defined as an `Integer`)\nA `refStore` is defined as a `static_attribute`, placing the device within **Store** `urn:ngsi-ld:Store:001`"
+			},
+			"response": []
+		}
+	]
+}
